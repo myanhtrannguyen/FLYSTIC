@@ -1,0 +1,103 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary-glow: var(--primary-glow);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-ocean: var(--ocean);
+  --color-coral: var(--coral);
+  --color-sunshine: var(--sunshine);
+  --color-leaf: var(--leaf);
+  --color-border: var(--border);
+  --color-ring: var(--ring);
+
+  --font-display: "Lexend", system-ui, sans-serif;
+  --font-sans: "Lexend", system-ui, sans-serif;
+}
+
+:root {
+  --radius: 1rem;
+
+  /* Eco-modern palette */
+  --background: oklch(0.985 0.012 145);
+  --surface: oklch(0.97 0.018 150);
+  --foreground: oklch(0.22 0.04 160);
+
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.22 0.04 160);
+
+  --primary: oklch(0.62 0.16 155);          /* Leaf green */
+  --primary-foreground: oklch(0.18 0.05 160);
+  --primary-glow: oklch(0.78 0.18 150);
+
+  --secondary: oklch(0.94 0.04 150);
+  --secondary-foreground: oklch(0.25 0.05 160);
+
+  --muted: oklch(0.95 0.02 150);
+  --muted-foreground: oklch(0.5 0.03 160);
+
+  --accent: oklch(0.92 0.06 155);
+  --accent-foreground: oklch(0.22 0.06 160);
+
+  --ocean: oklch(0.55 0.13 230);
+  --coral: oklch(0.7 0.18 30);
+  --sunshine: oklch(0.82 0.16 80);
+  --leaf: oklch(0.72 0.18 145);
+
+  --border: oklch(0.9 0.02 150);
+  --input: oklch(0.94 0.02 150);
+  --ring: oklch(0.62 0.16 155);
+
+  --gradient-hero: linear-gradient(135deg, oklch(0.32 0.08 160) 0%, oklch(0.45 0.13 165) 60%, oklch(0.62 0.16 155) 100%);
+  --gradient-card: linear-gradient(135deg, oklch(0.62 0.16 155 / 0.08), oklch(0.55 0.13 230 / 0.05));
+  --shadow-soft: 0 8px 30px -8px oklch(0.45 0.13 165 / 0.18);
+  --shadow-pop: 0 20px 50px -12px oklch(0.45 0.13 165 / 0.35);
+}
+
+@layer base {
+  * { border-color: var(--color-border); }
+  html, body { background-color: var(--color-background); color: var(--color-foreground); }
+  body { font-family: var(--font-sans); }
+}
+
+/* Decorative background pattern – tiled plastic-waste themed icons */
+.bg-plastic-pattern {
+  background-color: var(--background);
+  background-image:
+    radial-gradient(circle at 20% 10%, oklch(0.78 0.18 150 / 0.15), transparent 40%),
+    radial-gradient(circle at 85% 30%, oklch(0.55 0.13 230 / 0.12), transparent 45%),
+    radial-gradient(circle at 50% 95%, oklch(0.82 0.16 80 / 0.12), transparent 50%);
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0) rotate(var(--r, 0deg)); }
+  50% { transform: translateY(-14px) rotate(calc(var(--r, 0deg) + 4deg)); }
+}
+.animate-float { animation: float-slow 7s ease-in-out infinite; }
+
+@keyframes drift {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  100% { transform: translate(0, -40px) rotate(360deg); }
+}

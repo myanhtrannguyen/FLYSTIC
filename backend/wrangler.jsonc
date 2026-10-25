@@ -1,0 +1,47 @@
+{
+  "$schema": "../node_modules/wrangler/config-schema.json",
+  "name": "yoha-api",
+  "workers_dev": true,
+  "preview_urls": true,
+  "main": "src/worker.ts",
+  "compatibility_date": "2026-08-14",
+  "compatibility_flags": ["nodejs_compat"],
+  "secrets": {
+    "required": ["AUTH_SECRET", "ADMIN_INVITE_CODE", "PASSWORD_PEPPER"],
+  },
+  "observability": {
+    "enabled": true,
+    "logs": { "enabled": true, "head_sampling_rate": 1 },
+    "traces": { "enabled": true, "head_sampling_rate": 0.01 },
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "yoha",
+      // Replace after running: npx wrangler d1 create yoha --update-config
+      "database_id": "14b7d144-db23-4d50-bdd5-b0d8d046293a",
+      "migrations_dir": "migrations",
+    },
+  ],
+  "ratelimits": [
+    {
+      "name": "AUTH_GLOBAL_LIMIT",
+      "namespace_id": "711001",
+      "simple": { "limit": 60, "period": 60 },
+    },
+    {
+      "name": "AUTH_IDENTITY_LIMIT",
+      "namespace_id": "711002",
+      "simple": { "limit": 5, "period": 60 },
+    },
+  ],
+  "vars": {
+    "ALLOWED_ORIGIN": "http://localhost:5173,http://127.0.0.1:8080,https://yoha.io.vn,https://yoha-web.yoha-api-hust-soict.workers.dev",
+  },
+  "routes": [
+    {
+      "pattern": "api.yoha.io.vn",
+      "custom_domain": true,
+    },
+  ],
+}

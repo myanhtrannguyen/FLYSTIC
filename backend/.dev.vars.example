@@ -1,0 +1,4 @@
+# Local-only values for `npm run api:dev`. Do not commit a real `.dev.vars` file.
+AUTH_SECRET=replace-with-a-long-random-secret
+ADMIN_INVITE_CODE=replace-with-a-private-admin-invite-code
+PASSWORD_PEPPER=replace-with-a-separate-long-random-secret

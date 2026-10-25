@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title">
+  <title id="title">FLYSTIC</title>
+  <defs>
+    <linearGradient id="bg" x1="48" y1="32" x2="464" y2="480" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#166534"/>
+      <stop offset="1" stop-color="#22c55e"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="112" fill="url(#bg)"/>
+  <path d="M142 126h222v58H208v63h132v56H208v99h-66V126Z" fill="#f7fdf7"/>
+  <circle cx="388" cy="120" r="37" fill="#d9f99d"/>
+  <path d="M390 96c-27 13-37 34-29 61 28-4 45-21 49-48-6-6-13-10-20-13Z" fill="#15803d"/>
+</svg>

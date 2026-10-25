@@ -1,0 +1,30 @@
+{
+  "name": "FLYSTIC — Đổi nhựa lấy quà xanh",
+  "short_name": "FLYSTIC",
+  "description": "Đổi nhựa, tích điểm và đổi quà xanh trong khuôn viên trường.",
+  "lang": "vi",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f7fdf7",
+  "theme_color": "#20a064",
+  "icons": [
+    {
+      "src": "/icons/yoha-icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icons/yoha-icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icons/yoha-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
