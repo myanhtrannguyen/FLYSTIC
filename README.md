@@ -4,6 +4,8 @@ FLYSTIC is a campus plastic-collection platform. Students bring plastic to colle
 
 The interface supports Vietnamese, English, and Korean, works on desktop and mobile devices, and can be installed as a Progressive Web App (PWA).
 
+**Live application:** [https://yoha.io.vn](https://yoha.io.vn)
+
 ## Features
 
 ### Students
@@ -21,6 +23,10 @@ The interface supports Vietnamese, English, and Korean, works on desktop and mob
 - View station capacity, campaign metrics, and reports by plastic type and quality.
 - Record the transfer of all plastic currently stored at a station.
 - Export report data as CSV from the interface.
+
+## Planned improvements
+
+- **AI-assisted plastic recognition:** let students photograph a plastic item and receive a safe, reviewable material suggestion. See the [collaborator task specification](docs/ai-plastic-recognition-task.md). This feature is planned and is not yet available in production.
 
 ## Architecture
 
@@ -223,6 +229,7 @@ The fictional dataset for screenshots and product demos is stored in `backend/se
 │   ├── seeds/                   # Fictional demo SQL
 │   ├── src/worker.ts            # REST API Worker
 │   └── wrangler.jsonc           # D1, rate limits, CORS, and API route
+├── docs/                         # Contributor task specifications
 ├── exports/                     # Exported brand assets
 ├── public/
 │   ├── icons/                   # PWA icons
